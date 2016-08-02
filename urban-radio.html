@@ -14,13 +14,20 @@
  <body>
  <div id="mapid"></div>
  <div >
-<ul id='song-list'> 
-</ul> 
+   <audio id="audio" preload="auto" tabindex="0" controls="" >
+     <source src="http://www.archive.org/download/bolero_69/Bolero.mp3">
+       Your Fallback goes here
+   </audio>
+   <ul id="playlist">
+   </ul>
+
+
  </div>
    <script src="./node_modules/leaflet/dist/leaflet.js"></script>
    <script src="./node_modules/leaflet-knn/leaflet-knn.js"></script>
    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
    <script src="./node_modules/underscore/underscore-min.js"></script>
+   <script src="./urban-radio/playlist.js"></script>
    <script src="./urban-radio/script.js"></script>
  </body>
  </html>

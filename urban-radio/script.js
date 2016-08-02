@@ -35,5 +35,5 @@ var closest_songs = _.filter(songs, function(song) {
 });
 
 _.each(closest_songs, function(song) {
-  $('#song-list').append( "<li>"+ song[2] +"</li>" );
+  $('#playlist').append( "<li><a href="+ song[4]+">"+ song[2] +"</a></li>" );
 });
