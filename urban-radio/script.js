@@ -23,7 +23,7 @@ var songs = [
 [52.3924943 , 13.1175327 ,"Movement Museum", "April 16, 2009", "https://archive.org/compress/20090416/formats=VBR%20MP3&file=/20090416.zip"] ,
 [52.3844169 , 13.1159965 ,"Yerkes Southern Five", "Railroad Blues", "https://archive.org/download/YerkesSouthernFiveRailroadBlues1920/Yerkes_Southern_Five-Railroad_Blues-1920.mp3"] ,
 [52.406968  , 13.0918544 ,"Carlo Serafini", "Someone to watch over me", "https://archive.org/download/someonetowatchoverme/someonetowatchoverme.mp3"] ,
-[52.3918982 , 13.12999   ,"Eagle Eye Cherry", "Save Tonight", "http://mp3light.net/assets/songs/19000-19999/19106-save-tonight-eagle-eye-cherry--1421371597.mp3"] ,
+[52.3918982 , 13.12999   ,"Eagle Eye Cherry", "Save Tonight", "http://8tracks.s3.amazonaws.com/tf/028/707/588/48436.mp3"] ,
 ]
 _.each(songs, function(song) {
   L.marker(song).addTo(mymap)
