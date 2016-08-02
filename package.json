@@ -21,8 +21,8 @@
   },
   "homepage": "https://github.com/roschaefer/urban-radio#readme",
   "dependencies": {
-    "leaflet-geometryutil": "^0.5.0",
-    "leaflet-omnivore": "^0.3.2",
+    "jquery": "^3.1.0",
+    "leaflet-knn": "^0.1.0",
     "underscore": "^1.8.3"
   }
 }

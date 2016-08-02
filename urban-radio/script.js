@@ -10,20 +10,30 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 
 
 
-L.circle(current_location, 500, {
+var radius = 1000;
+L.circle(current_location, radius, {
       color: 'red',
       fillColor: '#f03',
       fillOpacity: 0.5
 
     }).addTo(mymap);
 
-songs = [
-[52.3924943,13.1175327],
-[52.3955048,13.1274601],
-[52.3844169,13.1159965],
-[52.406968, 13.0918544],
-[52.3918982,13.12999],
+var songs = [
+[52.3955048 , 13.1274601 ,"My Song 1"] ,
+[52.3924943 , 13.1175327 ,"My Song 2"] ,
+[52.3844169 , 13.1159965 ,"My Song 3"] ,
+[52.406968  , 13.0918544 ,"My Song 4"] ,
+[52.3918982 , 13.12999   ,"My Song 5"] ,
 ]
 _.each(songs, function(song) {
   L.marker(song).addTo(mymap)
+});
+
+var closest_songs = _.filter(songs, function(song) {
+  c = L.latLng(song.slice(0,2));
+  return c.distanceTo(current_location) <= radius;
+});
+
+_.each(closest_songs, function(song) {
+  $('#song-list').append( "<li>"+ song[2] +"</li>" );
 });
