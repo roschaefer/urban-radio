@@ -10,3 +10,20 @@ L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=p
 
 
 
+L.circle(current_location, 500, {
+      color: 'red',
+      fillColor: '#f03',
+      fillOpacity: 0.5
+
+    }).addTo(mymap);
+
+songs = [
+[52.3924943,13.1175327],
+[52.3955048,13.1274601],
+[52.3844169,13.1159965],
+[52.406968, 13.0918544],
+[52.3918982,13.12999],
+]
+_.each(songs, function(song) {
+  L.marker(song).addTo(mymap)
+});
