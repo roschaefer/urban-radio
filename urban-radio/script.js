@@ -19,11 +19,11 @@ L.circle(current_location, radius, {
     }).addTo(mymap);
 
 var songs = [
-[52.3955048 , 13.1274601 ,"My Song 1"] ,
-[52.3924943 , 13.1175327 ,"My Song 2"] ,
-[52.3844169 , 13.1159965 ,"My Song 3"] ,
-[52.406968  , 13.0918544 ,"My Song 4"] ,
-[52.3918982 , 13.12999   ,"My Song 5"] ,
+[52.3955048 , 13.1274601 ,"John W. Myers", "You're As Welcome As The Flowers In May", "https://archive.org/download/JohnW.Myers-YoureAsWelcomeAsTheFlowersInMay/JohnWMyers-YoureAsWelcomeAsTheFlowersInMay.mp3"] ,
+[52.3924943 , 13.1175327 ,"Movement Museum", "April 16, 2009", "https://archive.org/compress/20090416/formats=VBR%20MP3&file=/20090416.zip"] ,
+[52.3844169 , 13.1159965 ,"Yerkes Southern Five", "Railroad Blues", "https://archive.org/download/YerkesSouthernFiveRailroadBlues1920/Yerkes_Southern_Five-Railroad_Blues-1920.mp3"] ,
+[52.406968  , 13.0918544 ,"Carlo Serafini", "Someone to watch over me", "https://archive.org/download/someonetowatchoverme/someonetowatchoverme.mp3"] ,
+[52.3918982 , 13.12999   ,"Eagle Eye Cherry", "Save Tonight", "http://8tracks.s3.amazonaws.com/tf/028/707/588/48436.mp3"] ,
 ]
 _.each(songs, function(song) {
   L.marker(song).addTo(mymap)
