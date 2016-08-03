@@ -6,6 +6,8 @@
 !./package.json
 !./github_scrumboard.yml
 
+!node_modules/bootstrap/dist/css/bootstrap.min.css
+!node_modules/bootstrap/dist/js/bootstrap.min.js
 !node_modules/leaflet/dist/leaflet.js
 !node_modules/leaflet/dist/images/*
 !node_modules/leaflet-knn/leaflet-knn.js

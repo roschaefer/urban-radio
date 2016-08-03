@@ -9,32 +9,38 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    <link rel="stylesheet" href="https://npmcdn.com/leaflet@1.0.0-rc.2/dist/leaflet.css" />
+   <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
    <link rel="stylesheet" type="text/css" href="./urban-radio/style.css" />
  </head>
  <body>
 
- <form class='add-content'>
-   Search:<br>
-   <input class='add-content' type="text" name="firstname"  size="50">
-   <input type='submit' value='Add'></button>
- </form>
+   <div class='container'>
+     <div class='row'>
+     <h1 class='display-1'>Urban Radio</h1>
+       <form class='add-content' class='col-md-12'>
+         Search:<br>
+         <input class='add-content' type="text" name="firstname"  size="50">
+         <input type='submit' value='Add'></button>
+       </form>
 
- <div id="mapid"></div>
- <div >
-   <div id='current-title'>
+       <div id="mapid"></div>
+       <div id='player'>
+         <div id='current-title'>
+         </div>
+         <audio id="audio" preload="auto" tabindex="0" controls="" >
+           <source src="http://www.archive.org/download/bolero_69/Bolero.mp3">
+             Your Fallback goes here
+         </audio>
+           <ul id="playlist">
+           </ul>
+       </div>
+     </div>
    </div>
-   <audio id="audio" preload="auto" tabindex="0" controls="" >
-     <source src="http://www.archive.org/download/bolero_69/Bolero.mp3">
-       Your Fallback goes here
-   </audio>
-   <ul id="playlist">
-   </ul>
 
-
- </div>
    <script src="./node_modules/leaflet/dist/leaflet.js"></script>
    <script src="./node_modules/leaflet-knn/leaflet-knn.js"></script>
    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+   <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
    <script src="./node_modules/underscore/underscore-min.js"></script>
    <script src="./urban-radio/script.js"></script>
    <script src="./urban-radio/playlist.js"></script>
