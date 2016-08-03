@@ -44,7 +44,6 @@ var songs = [
     name                 = $('input.add-content-artist-song').val().split('-')[1];
     comment              = $('input.add-content-text').val();
     new_song             = [current_location.lat, current_location.lng, artist, name, mocked_url, comment] ;
-    console.log(new_song);
     songs.push(new_song);
     L.marker(current_location).addTo(mymap)
     updatePlaylist();

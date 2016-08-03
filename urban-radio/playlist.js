@@ -29,14 +29,13 @@ function playlistInit(){
     });
 }
 function changeTitle(){
-    $('#current-title').empty();
   table_row = $('.table-active');
   if (table_row.length){
+    $('#current-title').empty();
     song = table_row.children(".playlist-item-song").text();
     artist = table_row.children(".playlist-item-artist").text();
-    distance = table_row.children(".playlist-item-distance").text();
     comment = table_row.attr("data-comment");
-    $('#current-title').append( "<h1>"+ song +" von " + artist +" - " + distance + " </h1><p>" + comment + "</p>");
+    $('#current-title').append( "<h1>"+ song +" von " + artist + " </h1><p>" + comment + "</p>");
   }
 }
 function run(link, player){
