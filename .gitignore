@@ -7,6 +7,7 @@
 !./github_scrumboard.yml
 
 !node_modules/leaflet/dist/leaflet.js
+!node_modules/leaflet/dist/images/*
 !node_modules/leaflet-knn/leaflet-knn.js
 !node_modules/jquery/dist/jquery.min.js
 !node_modules/underscore/underscore-min.js
