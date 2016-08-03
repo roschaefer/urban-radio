@@ -29,10 +29,16 @@ function init(){
         run($(link),audio[0]);
     });
 }
+function changeTitle(link){
+  $('#current-title').empty();
+  $('#current-title').append( "<h1>"+ link.text() +"</h1><p>" + link.attr('data-comment') + "</p>");
+}
 function run(link, player){
         player.src = link.attr('href');
         par = link.parent();
+        changeTitle(link);
         par.addClass('active').siblings().removeClass('active');
         audio[0].load();
         audio[0].play();
 }
+

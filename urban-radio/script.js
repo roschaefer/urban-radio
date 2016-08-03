@@ -1,11 +1,12 @@
 var songs = [
-[52.3955048 , 13.1274601 ,"John W. Myers", "You're As Welcome As The Flowers In May", "https://archive.org/download/JohnW.Myers-YoureAsWelcomeAsTheFlowersInMay/JohnWMyers-YoureAsWelcomeAsTheFlowersInMay.mp3"] ,
-[52.3924943 , 13.1175327 ,"Movement Museum", "April 16, 2009", "https://archive.org/compress/20090416/formats=VBR%20MP3&file=/20090416.zip"] ,
-[52.3844169 , 13.1159965 ,"Yerkes Southern Five", "Railroad Blues", "https://archive.org/download/YerkesSouthernFiveRailroadBlues1920/Yerkes_Southern_Five-Railroad_Blues-1920.mp3"] ,
-[52.406968  , 13.0918544 ,"Carlo Serafini", "Someone to watch over me", "https://archive.org/download/someonetowatchoverme/someonetowatchoverme.mp3"] ,
-[52.3918982 , 13.12999   ,"Eagle Eye Cherry", "Save Tonight", "http://8tracks.s3.amazonaws.com/tf/028/707/588/48436.mp3"] ,
+[52.3955048 , 13.1274601 ,"John W. Myers", "You're As Welcome As The Flowers In May", "https://archive.org/download/JohnW.Myers-YoureAsWelcomeAsTheFlowersInMay/JohnWMyers-YoureAsWelcomeAsTheFlowersInMay.mp3" , "Absolut geiler Song"] ,
+[52.3924943 , 13.1175327 ,"Movement Museum", "April 16, 2009", "https://archive.org/compress/20090416/formats=VBR%20MP3&file=/20090416.zip"                                                                     , "Absolut geiler Song"] ,
+[52.3844169 , 13.1159965 ,"Yerkes Southern Five", "Railroad Blues", "https://archive.org/download/YerkesSouthernFiveRailroadBlues1920/Yerkes_Southern_Five-Railroad_Blues-1920.mp3"                             , "Absolut geiler Song"] ,
+[52.406968  , 13.0918544 ,"Carlo Serafini", "Someone to watch over me", "https://archive.org/download/someonetowatchoverme/someonetowatchoverme.mp3"                                                            , "Absolut geiler Song"] ,
+[52.3918982 , 13.12999   ,"Eagle Eye Cherry", "Save Tonight", "http://8tracks.s3.amazonaws.com/tf/028/707/588/48436.mp3"                                                                                        , "Absolut geiler Song"] ,
 ]
 var mocked_url = "http://8tracks.s3.amazonaws.com/tf/028/707/588/48436.mp3";
+var mocked_comment = "mein absoluter Lieblingssong";
 
 var initial_location = L.latLng([52.39241,13.11978]);
 
@@ -23,7 +24,7 @@ function addCuratedContent(content) {
   var current_location = area.getLatLng();
   artist = content.split(' ')[0];
   name = content.split(' ')[1];
-  new_song = [current_location.lat, current_location.lng, artist, name, mocked_url] ;
+  new_song = [current_location.lat, current_location.lng, artist, name, mocked_url, mocked_comment] ;
   console.log(new_song);
   songs.push(new_song);
   L.marker(current_location).addTo(mymap)
@@ -43,7 +44,9 @@ function updatePlaylist () {
   });
 
   _.each(closest_songs, function(song) {
-    $('#playlist').append( "<li><a href="+ song[4]+">"+ song[2] +"</a></li>" );
+    c = L.latLng(song.slice(0,2));
+    distance = c.distanceTo(area.getLatLng());
+    $('#playlist').append( "<li><a data-comment='"+ song[5] +"' href='"+ song[4]+"'>"+ song[2] +"</a><span>"+ Math.round(distance) + " m</span></li>" );
   });
 }
 
