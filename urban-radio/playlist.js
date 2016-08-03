@@ -30,7 +30,7 @@ function playlistInit(){
 }
 function changeTitle(){
     $('#current-title').empty();
-  table_row = $('.active');
+  table_row = $('.table-active');
   if (table_row.length){
     song = table_row.children(".playlist-item-song").text();
     artist = table_row.children(".playlist-item-artist").text();
@@ -42,7 +42,7 @@ function changeTitle(){
 function run(link, player){
         player.src = link.attr('href');
         row = link.parent().parent();
-        row.addClass('table-active').siblings().removeClass('active');
+        row.addClass('table-active').siblings().removeClass('table-active');
         changeTitle();
         audio[0].load();
         audio[0].play();
