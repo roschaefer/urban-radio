@@ -3,8 +3,7 @@ var playlist;
 var tracks;
 var current;
 
-init();
-function init(){
+function playlistInit(){
     current = 0;
     audio = $('#audio');
     playlist = $('#playlist');
@@ -41,4 +40,5 @@ function run(link, player){
         audio[0].load();
         audio[0].play();
 }
+
 
