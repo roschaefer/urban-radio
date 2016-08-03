@@ -17,11 +17,16 @@
    <div class='container'>
      <div class='row'>
        <h1 class='display-1'>Urban Radio</h1>
-       <form class='add-content' class='col-md-12'>
-         Search:<br>
-         <input class='add-content-artist-song' type="text" name="firstname"  size="50">
-         <input class='add-content-text' type="text" name="firstname"  size="50">
-         <input type='submit' value='Add'></button>
+       <form class='form-inline add-content' class='col-md-12'>
+         <div class="form-group">
+           <label for="artist-song">Artist - Song:</label>
+           <input class='form-control add-content-artist-song' type="text"  >
+         </div>
+         <div class="form-group">
+           <label for="comment">Comment:</label>
+           <input class='form-control add-content-text' type="text"  size="50">
+         </div>
+         <button type='submit' class='btn btn-primary'>Add</button>
        </form>
 
        <div id="mapid"></div>
