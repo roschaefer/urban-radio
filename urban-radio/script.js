@@ -46,7 +46,7 @@ function updatePlaylist () {
   _.each(closest_songs, function(song) {
     c = L.latLng(song.slice(0,2));
     distance = c.distanceTo(area.getLatLng());
-    $('#playlist').append( "<li><a data-comment='"+ song[5] +"' href='"+ song[4]+"'>"+ song[2] +"</a><span>"+ Math.round(distance) + " m</span></li>" );
+    $('#playlist').append( "<li><a data-comment='"+ song[5] +"' href='"+ song[4]+"'>"+ song[2] +"  --  " + song[3] + "</a><span>"+ Math.round(distance) + " m</span></li>" );
   });
 }
 
