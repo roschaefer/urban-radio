@@ -7,7 +7,7 @@ function playlistInit(){
     current = 0;
     audio = $('#audio');
     playlist = $('#playlist');
-    tracks = playlist.find('li a');
+    tracks = playlist.find('a.playlist-item-link');
     len = tracks.length - 1;
     audio[0].volume = .10;
     audio[0].play();
@@ -28,15 +28,22 @@ function playlistInit(){
         run($(link),audio[0]);
     });
 }
-function changeTitle(link){
-  $('#current-title').empty();
-  $('#current-title').append( "<h1>"+ link.text() +"</h1><p>" + link.attr('data-comment') + "</p>");
+function changeTitle(){
+    $('#current-title').empty();
+  table_row = $('.active');
+  if (table_row.length){
+    song = table_row.children(".playlist-item-song").text();
+    artist = table_row.children(".playlist-item-artist").text();
+    distance = table_row.children(".playlist-item-distance").text();
+    comment = table_row.attr("data-comment");
+    $('#current-title').append( "<h1>"+ song +" von " + artist +" - " + distance + " </h1><p>" + comment + "</p>");
+  }
 }
 function run(link, player){
         player.src = link.attr('href');
-        par = link.parent();
-        changeTitle(link);
+        par = link.parent().parent();
         par.addClass('active').siblings().removeClass('active');
+        changeTitle();
         audio[0].load();
         audio[0].play();
 }

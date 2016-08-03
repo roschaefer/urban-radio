@@ -42,17 +42,21 @@ $.getScript("urban-radio/playlist.js", function(){
 
   function updatePlaylist () {
     $('#playlist').empty();
+    $('#playlist').append( "<thead><tr><th></th><th>Artist </th><th> Title</th><th>Distance</th></tr></thead>");
     var closest_songs = _.filter(songs, function(song) {
       c = L.latLng(song.slice(0,2));
       return c.distanceTo(area.getLatLng()) <= radius;
     });
 
+    $('#playlist').append( "<tbody>");
     _.each(closest_songs, function(song) {
       c = L.latLng(song.slice(0,2));
       distance = c.distanceTo(area.getLatLng());
-      $('#playlist').append( "<li><a data-comment='"+ song[5] +"' href='"+ song[4]+"'>"+ song[2] +"  --  " + song[3] + "</a><span>"+ Math.round(distance) + " m</span></li>" );
+      $('#playlist').append( "<tr data-comment='"+ song[5] +"' ><td><a class='playlist-item-link glyphicon glyphicon-play-circle' href='"+ song[4]+"'/></td><td class='playlist-item-artist'>"+ song[2] +"</td><td class='playlist-item-song'>" + song[3] + "</td><td class='playlist-item-distance'>"+ Math.round(distance) + " m</td></tr>" );
     });
+    $('#playlist').append( "</tbody>");
     playlistInit();
+    changeTitle();
   }
 
   function onMapClick(e) {
