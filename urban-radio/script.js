@@ -5,16 +5,35 @@ var songs = [
 [52.406968  , 13.0918544 ,"Carlo Serafini", "Someone to watch over me", "https://archive.org/download/someonetowatchoverme/someonetowatchoverme.mp3"] ,
 [52.3918982 , 13.12999   ,"Eagle Eye Cherry", "Save Tonight", "http://8tracks.s3.amazonaws.com/tf/028/707/588/48436.mp3"] ,
 ]
-var current_location = L.latLng([52.39241,13.11978]);
+var mocked_url = "http://8tracks.s3.amazonaws.com/tf/028/707/588/48436.mp3";
+
+var initial_location = L.latLng([52.39241,13.11978]);
 
 
 var radius = 1000;
-var area = L.circle(current_location, radius, {
+var area = L.circle(initial_location, radius, {
       color: 'red',
       fillColor: '#f03',
       fillOpacity: 0.5
 
 })
+
+function addCuratedContent(content) {
+  var new_song = [];
+  var current_location = area.getLatLng();
+  artist = content.split(' ')[0];
+  name = content.split(' ')[1];
+  new_song = [current_location.lat, current_location.lng, artist, name, mocked_url] ;
+  console.log(new_song);
+  songs.push(new_song);
+  L.marker(current_location).addTo(mymap)
+  updatePlaylist();
+}
+
+$('form.add-content').on('submit', function(event) {
+  event.preventDefault();
+  addCuratedContent( $('input.add-content').val() );
+});
 
 function updatePlaylist () {
   $('#playlist').empty();
@@ -33,7 +52,7 @@ function onMapClick(e) {
   updatePlaylist();
 }
 
-var mymap = L.map('mapid').setView(current_location, 13);
+var mymap = L.map('mapid').setView(initial_location, 13);
 L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw', {
   maxZoom: 18,
   attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
