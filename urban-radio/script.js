@@ -1,6 +1,6 @@
 var songs = [
 [52.3955048 , 13.1274601 ,"John W. Myers", "You're As Welcome As The Flowers In May", "https://archive.org/download/JohnW.Myers-YoureAsWelcomeAsTheFlowersInMay/JohnWMyers-YoureAsWelcomeAsTheFlowersInMay.mp3" , "Absolut geiler Song"] ,
-[52.3924943 , 13.1175327 ,"Movement Museum", "April 16, 2009", "https://archive.org/compress/20090416/formats=VBR%20MP3&file=/20090416.zip"                                                                     , "Eskalieren!"] ,
+[52.3924943 , 13.1175327 ,"Movement Museum", "April 16, 2009", "https://archive.org/download/20090416/20090416.mp3"                                                                     , "Eskalieren!"] ,
 [52.3844169 , 13.1159965 ,"Yerkes Southern Five", "Railroad Blues", "https://archive.org/download/YerkesSouthernFiveRailroadBlues1920/Yerkes_Southern_Five-Railroad_Blues-1920.mp3"                             , "Den hab ich immer mit meiner Tante gehört."] ,
 [52.406968  , 13.0918544 ,"Carlo Serafini", "Someone to watch over me", "https://archive.org/download/someonetowatchoverme/someonetowatchoverme.mp3"                                                            , "Prüfungszeit"] ,
 [52.3918982 , 13.12999   ,"Eagle Eye Cherry", "Save Tonight", "http://8tracks.s3.amazonaws.com/tf/028/707/588/48436.mp3"                                                                                        , "Zu Hause"] ,
